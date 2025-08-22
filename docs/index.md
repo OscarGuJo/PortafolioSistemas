@@ -1,6 +1,6 @@
 # Documentación del Proyecto
 
-Bienvenido 👋  
+Bienvenido persona que no conozco 👋  
 Esta es una **plantilla** basada en [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) para cursos y proyectos.
 
 ---
