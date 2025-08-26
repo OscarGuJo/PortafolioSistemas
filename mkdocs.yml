@@ -29,8 +29,8 @@ theme:
   highlightjs: true 
   palette:
       - scheme: default
-        primary: red
-
+        primary: black
+        
   features:
     - content.code.copy
     - content.tooltips

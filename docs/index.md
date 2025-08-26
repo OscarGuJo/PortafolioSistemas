@@ -1,6 +1,9 @@
-# About me
-<img src="recursos/imgs/Yo.jpg" width=100px alt="Mi foto en carpeta">
+# About me <img src="recursos/imgs/Yo.jpg" alt="Mi foto" style="float: right; width: 100px; height: 120px; border-radius: 50%;">
 
+
+Cuenta: 199064
+
+---
 
 Este es mi portafolio personal, donde voy a publicar todos mis avances, procedimientos, observaciones y resultados de mis proyectos dentro de mi carrera a partir del quinto semestre.  
 
