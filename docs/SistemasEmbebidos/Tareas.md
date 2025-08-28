@@ -1,4 +1,8 @@
-# Tarea 1: Cuadro comparativo
+# TAREAS DEL CURSO
+
+---
+
+## Tarea 1: Cuadro comparativo
 
 ---
 
@@ -34,3 +38,49 @@ Aquí está el ranking de los microcontroladores, lo hice en mi opinión tomando
 | **PIC16F877A**          | 4        | Es muy utilizado en la industria por su optimización y simpleza, pero en los tiempos actuales se está quedando un poco obsoleto porque no tiene tanta memoria y es un poco más lento | Lo elegí porque siento que si me voy a un área laboral muy industrial tarde o temprano voy a terminar trabajando con este microcontrolador, o por lo menos, con unos parecidos |
 
 
+---
+
+## Tarea 2: Outputs básicos
+
+---
+En esta tarea tuvimos que realizar 3 programas distintos, en los cuales trabajamos en la primera un contador binario de 4 bits, en la segunda una secuencia de barrido y la última una secuencia en formato Gray, igualmente de 4 bits.
+
+###Primer_programa
+
+Lo que hace este programa es representar en una cadena de 4 LEDS un contador en binario representando los 1 y 0 en encendido y apagado.
+
+---
+```bash
+
+#include "pico/stdlib.h"
+ 
+#define LEDS_MASK ((1<<0) | (1<<1) | (1<<3) | (1<<4))  
+ 
+int main() {
+    stdio_init_all();
+ 
+   
+    gpio_init(0); gpio_set_dir(0, GPIO_OUT);
+    gpio_init(1); gpio_set_dir(1, GPIO_OUT);
+    gpio_init(3); gpio_set_dir(3, GPIO_OUT);
+    gpio_init(4); gpio_set_dir(4, GPIO_OUT);
+ 
+    int estado = 0;
+ 
+    while (1) {
+       
+        for (estado = 0; estado < 16; estado++) {
+           
+            gpio_put(0, estado & (1<<0));
+            gpio_put(1, estado & (1<<1));
+            gpio_put(3, estado & (1<<2));  
+            gpio_put(4, estado & (1<<3));
+            sleep_ms(500);
+        }
+    }
+}
+```
+---
+### Esquemáticos y videos
+---
+<img src="IMGSTareas/IMG/Esquematico12D.png" alt="Mi foto" style="float: right; width: 200px; height: 120px;">
