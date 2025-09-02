@@ -302,7 +302,7 @@ int main() {
 ![Esquemático 3D](IMGSTareas/IMG/Esquematico23D.png){ width="600" align=center}
 
 <iframe width="560" height="315"
-src="https://youtu.be/bSNO7ncCw5g?feature=shared"
+src="https://www.youtube.com/embed/bSNO7ncCw5g"
 title="YouTube video player"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -313,7 +313,7 @@ allowfullscreen>
 
 ## Segundo programa
 
-Este primer programa consistió en hacer 3 compuertas lógicas: AND, OR y XOR, programando entradas con 2 botones en C y ejecutando en el microcontrolador para encender 3 LEDs, cada LED con la salida de las distintas compuertas.
+Este segundo programa consistió en hacer una secuencia en cadenita, al igual que el programa de la cadena en la segunda tarea , programando entradas con 2 botones en C y ejecutando en el microcontrolador para encender la fila de 4 LEDs, cada LED con la salida de la numeración correspondiente.
 
 ---
 
@@ -390,16 +390,9 @@ int main() {
 ![Esquemático 3D](IMGSTareas/IMG/Esquematico23D.png){ width="600" align=center}
 
 <iframe width="560" height="315"
-src="https://youtu.be/tf33W2s8G6I?si=I9aajVK2bN4PJJhe"
+src="https://www.youtube.com/embed/tf33W2s8G6I"
 title="YouTube video player"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 allowfullscreen>
 </iframe>
-
----
-
-
-
----
-
