@@ -560,7 +560,7 @@ int main() {
 ![Esquemático 3D](IMGSTareas/IMG/Esquematico3DPong.png){ width="600" align=center}
 
 <iframe width="560" height="315"
-src="https://www.youtube.com/embed/cZ1QBH4Tw2o"
+src="https://www.youtube.com/embed/WDvfNiqJyws"
 title="YouTube video player"
 frameborder="0"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
