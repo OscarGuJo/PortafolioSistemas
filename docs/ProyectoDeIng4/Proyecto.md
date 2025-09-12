@@ -2,20 +2,33 @@
 
 ---
 
-## Dispositivo del cuidado de la piel
+## Sensor de Gas LP
 
 ---
 
-La propuesta de mi proyecto a desarrollar este semestre consiste en un dispositivo capaz de medir la intensidad de los rayos UV del entorno en el que se encuentre y con base a eso poder realizar un diagnóstico de los cuidados necesarios para evitar daños en la piel, la base del producto se encuentra en la personalización de información de cada usuario con el bojetivo de poder adaptar los cuidados a todos los tipos de piel.
+El gas LP (Licuado de Petróleo) es uno de los recursos más utilizados para el uso doméstico, pero también es uno de los más riesgosos, ya que un descuido de una fuga puede ocasionar una catástrofe en la que puede haber pérdidas materiales o incluso humanas.
+
+La mayor parte de los accidentes graves son gracias al medio de transporte del gas LP, el cual son las pipas. Estas pipas son muy peligrosas, ya que si una de ellas llega a tener una fuga puede ocurrir una explosión a gran escala y hacer daños irreparables en un gran radio de distancia.
+
+Nuestra propuesta es construir un sensor de gas LP barato, que cuando detecte dicho gas, ya sea por una fuga en un departamento o una gran fuga de gas de una pipa, accione una alarma para evacuar la zona, podrá ser implementado en diversas zonas por su portabilidad.
+
 
 ### Características que debe de tener el producto:
 
-Debe de ser capaz de transformar la intensidad de los rayos UV en valores numéricos.
-Tiene que ser capaz de generar una predicción en relación al tiempo que tardaría la piel en recibir daños.
-Tiene que tener los datos de los tipos de piel y como la variable de los rayos UV afecta de forma distinta a cada tipo de piel.
+Debe de ser capaz de detectar una fuga de Gas LP y hacer sonar una alarma, alertando del peligro a tiempo para evitar en mayor medida un accidente. Debe de ser barato, confiable, fácil de construir y fácil de implementar.
+
+---
+
+### Link de la presentación
+
+[Presentación de ideas.](https://www.canva.com/design/DAGyy1hqadw/BnHuIFL2b5_UzT2nNvXCFg/edit)
 
 ### Boceto
 
 ---
 
-![Esquemático 3D](IMGSproyecto/IMG/Boceto.jpg){ width="600" align=center}
+![Esquemático 3D](IMGSproyecto/IMG/bocetogasLp.jpg){ width="600" align=center}
+
+### TAREA 1 Investigación de máquinas de cápsulas de café
+
+[Café en máquina](https://www.canva.com/design/DAGyyk8UNIc/vEBEfNsOicrzrriuVTPqnQ/edit?utm_content=DAGyyk8UNIc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
