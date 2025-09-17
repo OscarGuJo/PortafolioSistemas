@@ -730,3 +730,133 @@ int main() {
 Al comparar los dos modos, se encontró una diferencia entre el modo µs vs ciclos. El modo ciclos es más preciso y no genera ningún delay perceptible en el osciloscopio a diferncia del modo µs que tiene una diferencia de 1 ms.
 
 Con esta información se puede concluir que para tener un timer preciso el uso de los ciclos es el ideal y el mejor para implementar en futuros proyectos, ya que genera un timer óptimo y sin delays.
+
+---
+
+## Tarea 6 Ejercicios de programación
+
+---
+
+Esta tarea consistió en aprender a hacer programas utilizando timers y alarmas para hacer programas más optimizados.
+
+---
+
+### Primera actividad
+
+--- 
+
+Esta actividad consistió en que, utilizando alarmas, encender y apagar simultáneamente 4 LEDs a velocidades distintas.
+
+### Programa 
+
+```bash
+
+#include "pico/stdlib.h"
+#include "hardware/irq.h"
+#include "hardware/structs/timer.h"
+#include "hardware/gpio.h"
+
+#define LED0_PIN     0
+#define LED1_PIN     1
+#define LED2_PIN     3
+#define LED3_PIN     4
+
+#define ALARM0_NUM   0
+#define ALARM1_NUM   1
+#define ALARM2_NUM   2
+#define ALARM3_NUM   3
+
+static volatile uint32_t next0_us, next1_us, next2_us, next3_us;
+static const uint32_t INTERVALO0_US = 200000u;
+static const uint32_t INTERVALO1_US = 400000u;
+static const uint32_t INTERVALO2_US = 600000u;
+static const uint32_t INTERVALO3_US = 800000u;
+
+// ISR ÚNICA para el TIMER
+static void on_timer_irq(void) {
+    uint32_t status = timer_hw->intr;  
+    timer_hw->intr = status;
+
+    if (status & (1u << ALARM0_NUM)) {
+        sio_hw->gpio_togl = 1u << LED0_PIN;
+        next0_us += INTERVALO0_US;
+        timer_hw->alarm[ALARM0_NUM] = next0_us;
+    }
+    if (status & (1u << ALARM1_NUM)) {
+        sio_hw->gpio_togl = 1u << LED1_PIN;
+        next1_us += INTERVALO1_US;
+        timer_hw->alarm[ALARM1_NUM] = next1_us;
+    }
+    if (status & (1u << ALARM2_NUM)) {
+        sio_hw->gpio_togl = 1u << LED2_PIN;
+        next2_us += INTERVALO2_US;
+        timer_hw->alarm[ALARM2_NUM] = next2_us;
+    }
+    if (status & (1u << ALARM3_NUM)) {
+        sio_hw->gpio_togl = 1u << LED3_PIN;
+        next3_us += INTERVALO3_US;
+        timer_hw->alarm[ALARM3_NUM] = next3_us;
+    }
+}
+
+int main() {
+    gpio_init(LED0_PIN); gpio_set_dir(LED0_PIN, GPIO_OUT); gpio_put(LED0_PIN, 0);
+    gpio_init(LED1_PIN); gpio_set_dir(LED1_PIN, GPIO_OUT); gpio_put(LED1_PIN, 0);
+    gpio_init(LED2_PIN); gpio_set_dir(LED2_PIN, GPIO_OUT); gpio_put(LED2_PIN, 0);
+    gpio_init(LED3_PIN); gpio_set_dir(LED3_PIN, GPIO_OUT); gpio_put(LED3_PIN, 0);
+
+    timer_hw->source = 0u;
+
+    uint32_t now_us = timer_hw->timerawl;
+
+    next0_us = now_us + INTERVALO0_US;
+    next1_us = now_us + INTERVALO1_US;
+    next2_us = now_us + INTERVALO2_US;
+    next3_us = now_us + INTERVALO3_US;
+
+    timer_hw->alarm[ALARM0_NUM] = next0_us;
+    timer_hw->alarm[ALARM1_NUM] = next1_us;
+    timer_hw->alarm[ALARM2_NUM] = next2_us;
+    timer_hw->alarm[ALARM3_NUM] = next3_us;
+
+    hw_clear_bits(&timer_hw->intr,
+                  (1u << ALARM0_NUM) |
+                  (1u << ALARM1_NUM) |
+                  (1u << ALARM2_NUM) |
+                  (1u << ALARM3_NUM));
+
+    int irq_num = timer_hardware_alarm_get_irq_num(timer_hw, 0);
+    irq_set_exclusive_handler(irq_num, on_timer_irq);
+
+    hw_set_bits(&timer_hw->inte,
+                (1u << ALARM0_NUM) |
+                (1u << ALARM1_NUM) |
+                (1u << ALARM2_NUM) |
+                (1u << ALARM3_NUM));
+
+    irq_set_enabled(irq_num, true);
+
+    while (true) {
+        tight_loop_contents();
+    }
+}
+
+```
+---
+
+### Diagrama y video
+
+![Diagrama tarea 5](IMGSTareas/IMG/Esquematico13D.png){ width="600" align=center}
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/6Aigsqccans"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+---
+
+
+
