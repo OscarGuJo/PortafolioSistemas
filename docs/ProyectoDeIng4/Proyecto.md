@@ -29,6 +29,15 @@ Debe de ser capaz de detectar una fuga de Gas LP y hacer sonar una alarma, alert
 
 ![Esquemático 3D](IMGSproyecto/IMG/bocetogasLp.jpg){ width="600" align=center}
 
-### TAREA 1 Investigación de máquinas de cápsulas de café
+---
+
+### Tarea 1 SYLLABUS Firmado
+
+<embed src="docs/Syllabusfirmado.pdf" type="application/pdf" width="100%" height="600px" />
+
+
+---
+
+### TAREA 2 Investigación de máquinas de cápsulas de café
 
 [Café en máquina](https://www.canva.com/design/DAGyyk8UNIc/vEBEfNsOicrzrriuVTPqnQ/edit?utm_content=DAGyyk8UNIc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
