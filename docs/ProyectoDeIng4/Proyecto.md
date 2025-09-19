@@ -33,11 +33,14 @@ Debe de ser capaz de detectar una fuga de Gas LP y hacer sonar una alarma, alert
 
 ### Tarea 1 SYLLABUS Firmado
 
-<embed src="docs/Syllabusfirmado.pdf" type="application/pdf" width="100%" height="600px" />
-
+[📄 Ver y descargar PDF del Syllabus firmado](Syllabusfirmado.pdf)
 
 ---
 
 ### TAREA 2 Investigación de máquinas de cápsulas de café
 
-[Café en máquina](https://www.canva.com/design/DAGyyk8UNIc/vEBEfNsOicrzrriuVTPqnQ/edit?utm_content=DAGyyk8UNIc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Café de cápsulas](https://www.canva.com/design/DAGyyk8UNIc/vEBEfNsOicrzrriuVTPqnQ/edit?utm_content=DAGyyk8UNIc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+### TAREA 3 Diagrama de Gantt
+
+[Diagrama de Gantt proyecto](https://iberopuebla.atlassian.net/jira/software/projects/MBA/list?atlOrigin=eyJpIjoiZWEzNTNhYzEzZTE0NDdhNjgxZmZkZjljMGU0ZGQ4OTUiLCJwIjoiaiJ9)
