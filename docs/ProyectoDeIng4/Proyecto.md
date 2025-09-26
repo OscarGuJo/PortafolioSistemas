@@ -52,3 +52,11 @@ Debe de ser capaz de detectar en tiempo real los niveles de rayos UV en el ambie
 ---
 
 [Diagrama de Gantt proyecto](https://iberopuebla.atlassian.net/jira/software/projects/MBA/list?atlOrigin=eyJpIjoiZWEzNTNhYzEzZTE0NDdhNjgxZmZkZjljMGU0ZGQ4OTUiLCJwIjoiaiJ9)
+
+---
+
+### TAREA 4 Marco “real-ganar-vale la pena” aplicado a Mi proyecto
+
+---
+
+[Real-Ganar Vale la pena](https://docs.google.com/document/d/e/2PACX-1vSxMNVmR-jJWD9nZ6KWQUC17n7yDtmYZeKo0RqMjSaXiRVQKnahckI0v6XETvYHYvuaoG77ukvXxg2c/pub)
