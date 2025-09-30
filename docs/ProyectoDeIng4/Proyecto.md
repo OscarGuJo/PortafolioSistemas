@@ -55,7 +55,7 @@ Debe de ser capaz de detectar en tiempo real los niveles de rayos UV en el ambie
 
 ---
 
-### TAREA 4 Marco “real-ganar-vale la pena” aplicado a Mi proyecto
+### TAREA 4 Marco “real-ganar-vale la pena” aplicado a mi proyecto
 
 ---
 
