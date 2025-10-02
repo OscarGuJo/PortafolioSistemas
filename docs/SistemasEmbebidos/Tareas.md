@@ -1381,7 +1381,7 @@ int main() {
 
 ---
 
-### Fotos y diagrama
+### Fotos de comprobación y diagrama
 
 ![d tarea 7](IMGSTareas/IMG/diagramacapacitor.jpg){ width="600" align=center}
 ![Foto1 tarea 7](IMGSTareas/IMG/ocilo1.jpg){ width="600" align=center}
