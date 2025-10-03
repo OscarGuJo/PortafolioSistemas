@@ -83,4 +83,9 @@ Debe de ser capaz de detectar en tiempo real los niveles de rayos UV en el ambie
 
 [Diagrama de Porter](https://www.canva.com/design/DAG0xGMiBc4/y4W1TcuNnE4gSCQcIF5zfA/edit?utm_content=DAG0xGMiBc4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
+
+[Insightful](https://www.canva.com/design/DAG0xcUebPU/UCFHWKUtNRaSE8xj3kxsuA/edit?utm_content=DAG0xcUebPU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+.
+
 ---
