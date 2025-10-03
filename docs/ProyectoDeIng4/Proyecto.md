@@ -60,3 +60,27 @@ Debe de ser capaz de detectar en tiempo real los niveles de rayos UV en el ambie
 ---
 
 [Real-Ganar Vale la pena](https://docs.google.com/document/d/e/2PACX-1vSxMNVmR-jJWD9nZ6KWQUC17n7yDtmYZeKo0RqMjSaXiRVQKnahckI0v6XETvYHYvuaoG77ukvXxg2c/pub)
+
+---
+
+### Páginas de trabajo en tiempo real
+
+---
+
+[Página de Trello](https://trello.com/c/4ig0xvoT/10-análisis-de-componentes-y-materiales-para-el-prototipo)
+
+[Página de Jira](https://iberopuebla.atlassian.net/jira/software/projects/MBA/boards/1/timeline)
+
+---
+
+### TAREA 5 Mercado y diagrama Porter
+
+---
+
+[IDEO Buisness](https://www.canva.com/design/DAG0w_cchC4/iZkATuicc6fS7nchp_iR7w/edit)
+
+[Sensor de rayos UV](https://docs.google.com/document/d/1EhannVGKgvJBUKr_ac1ZMV9NYwc3UNqIrEO82akdBdE/edit?usp=sharing)
+
+[Diagrama de Porter](https://www.canva.com/design/DAG0xGMiBc4/y4W1TcuNnE4gSCQcIF5zfA/edit?utm_content=DAG0xGMiBc4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+---
