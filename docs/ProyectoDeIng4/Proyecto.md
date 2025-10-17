@@ -86,6 +86,7 @@ Debe de ser capaz de detectar en tiempo real los niveles de rayos UV en el ambie
 
 [Insightful](https://www.canva.com/design/DAG0xcUebPU/UCFHWKUtNRaSE8xj3kxsuA/edit?utm_content=DAG0xcUebPU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-.
+[Costo de arranque](https://www.canva.com/design/DAG1bsu4Fcg/8mSzcyeuKD5USAmkrbKcHw/edit?utm_content=DAG1bsu4Fcg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 
 ---
