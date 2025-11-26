@@ -15,6 +15,14 @@ En esta sección de mi página colocaré los pinouts que encuentre de las placas
 
 ![ESP32](IMGSTareas/IMG/ESP32.png){ width="600" align=center}
 
+---
+
+## XIAO ESP32-C3
+
+![XIAOESP32C3](IMGSTareas/IMG/XiaoESP32C3.png){ width="600" align=center}
+
+---
+
 ### Attiny 85
 
 ![ATTINY85PROTO](IMGSTareas/IMG/ATTINY85.png){ width="500" align=center}
