@@ -81,21 +81,35 @@ Write short, technical answers.
 
 Assign a relative priority to each task:
 
--High
--Medium
--Low
+-High.
+
+-Medium.
+
+-Low.
+
 
 Then justify each choice in one sentece.
 
 ![Esquemático 2D](IMGSTareas/IMG/Ex3.jpeg){ width="500" align=center}
 
+---
+
 ### Exercise 4 - Design Judgment (Trick Question)
+
+---
+
 
 Which of the following should NOT necessarily be implemented as a FreeRTOS task?
 
- -Emergency button monitoring
- -Wi-Fi trnsmission
- -Error logging
- -Status LED blinking
+ -Emergency button monitoring.
+
+ -Wi-Fi trnsmission.
+
+ -Error logging.
+
+ -Status LED blinking.
+
 
 Explain why in 2-3 sentences.
+
+![Esquemático 2D](IMGSTareas/IMG/Ex4.jpeg){ width="500" align=center}
