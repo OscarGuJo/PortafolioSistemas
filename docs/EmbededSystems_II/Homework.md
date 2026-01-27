@@ -12,10 +12,14 @@ The goal of this exercise is to train you to identify logical FreeRTOS tasks fro
 
 You should focus on:
 
--Timing requirements
--Blocking behavior
--Safety and criticality
--Independent execution flows
+-Timing requirements.
+
+-Blocking behavior.
+
+-Safety and criticality.
+
+-Independent execution flows.
+
 
 Think in terms of "what must happen independently", not functions or lines of code.
 
@@ -27,21 +31,31 @@ Think in terms of "what must happen independently", not functions or lines of co
 
 The system:
 
--Reads a temperature sensor every 50 ms
--Sends sensor data via Wi-Fi every 2 seconds
--Monitors an emergency button continuously
--Blinks a status LED at 1 Hz
--Stores error messages when failures occur
+-Reads a temperature sensor every 50 ms.
+
+-Sends sensor data via Wi-Fi every 2 seconds.
+
+-Monitors an emergency button continuously.
+
+-Blinks a status LED at 1 Hz.
+
+-Stores error messages when failures occur.
+
 
 Assume:
 
--The system runs on a microcontroller
--Timing matters
--Some operations may block (Wi-Fi, storage)
+-The system runs on a microcontroller.
+
+-Timing matters.
+
+-Some operations may block (Wi-Fi, storage).
+
 
 ### Exercise 1 - Identify Logical Tasks
 
 List the logical tasks that exist in this system.
+
+![Esquemático 2D](IMGSTareas/IMG/Ex1.jpeg){ width="500" align=center}
 
 ---
 
@@ -49,11 +63,15 @@ List the logical tasks that exist in this system.
 
 For each task you identified, answer the following:
 
--Is it time-critical? (Yes/No)
--Can it block safely? (Yes/No)
--What happens if this task is delayed?
+-Is it time-critical? (Yes/No).
+
+-Can it block safely? (Yes/No).
+
+-What happens if this task is delayed?.
 
 Write short, technical answers.
+
+![Esquemático 2D](IMGSTareas/IMG/Ex2.jpeg){ width="500" align=center}
 
 ---
 
@@ -69,7 +87,7 @@ Assign a relative priority to each task:
 
 Then justify each choice in one sentece.
 
-
+![Esquemático 2D](IMGSTareas/IMG/Ex3.jpeg){ width="500" align=center}
 
 ### Exercise 4 - Design Judgment (Trick Question)
 

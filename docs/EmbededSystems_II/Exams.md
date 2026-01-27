@@ -1,4 +1,4 @@
-# Examenes Del Curso
+# EXAMS
 
 ---
 
