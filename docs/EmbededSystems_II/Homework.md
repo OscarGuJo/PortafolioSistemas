@@ -427,4 +427,3 @@ TaskA increments the counter more frequently since the scheduler favors higher-p
 4.- In one sentence: what does a mutex “guarantee”?
 
 A mutex guarantees exclusive access to a shared variable so only one task can use it at a time.
-
