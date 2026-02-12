@@ -428,7 +428,12 @@ TaskA increments the counter more frequently since the scheduler favors higher-p
 
 A mutex guarantees exclusive access to a shared variable so only one task can use it at a time.
 
+---
+
 ## Task Excercise
+
+---
+
 ### Goal
 
 Use the task´s learned commands to create a program that uses 7 different tasks
