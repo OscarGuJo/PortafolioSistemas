@@ -1410,6 +1410,8 @@ void app_main(void)
 
 ### Excercise 3 code:
 ```
+hi
+
 ```
 #### Images and videos:
 
