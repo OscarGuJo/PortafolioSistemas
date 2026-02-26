@@ -974,7 +974,10 @@ void app_main(void)
     ESP_LOGI(TAG, "Open: http://<ESP_IP>/ from a device on the same network.");
 }
 ```
-#### video:
+
+#### Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7MEiwLmx20I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -1406,9 +1409,12 @@ void app_main(void)
 ```
 #### videos:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4lUXgxR2c8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ---
 
 ### Excercise 3 code:
+
 ```
 hi
 
