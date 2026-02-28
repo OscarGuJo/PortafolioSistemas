@@ -1,0 +1,1478 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Tareas/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>I2C (Inter-Integrated Circuit) - Portafolios Personal Oscar GJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i2c-inter-integrated-circuit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Portafolios Personal Oscar GJ" class="md-header__button md-logo" aria-label="Portafolios Personal Oscar GJ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portafolios Personal Oscar GJ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              I2C (Inter-Integrated Circuit)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Portafolios Personal Oscar GJ" class="md-nav__button md-logo" aria-label="Portafolios Personal Oscar GJ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Portafolios Personal Oscar GJ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejemplos y Guías
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ejemplos y Guías
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ejemplos%20y%20Gu%C3%ADas/comandos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encabezados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ejemplos%20y%20Gu%C3%ADas/ejemplo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Ejemplo de Documentación del Proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ejemplos%20y%20Gu%C3%ADas/gitcmds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🚀 Comandos básicos de Git (primeros pasos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EmbededSystems II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    EmbededSystems II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EmbededSystems_II/Exams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../EmbededSystems_II/Homework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ASSIGNMENTS OF THE COURSE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ProyectoDeIng4
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ProyectoDeIng4
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProyectoDeIng4/Proyecto%20final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PROYECTO FINAL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ProyectoDeIng4/Proyecto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Propuesta de proyecto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SistemasEmbebidos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SistemasEmbebidos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Examenes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examenes Del Curso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PinOuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PINOUTS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tareas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TAREAS DEL CURSO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I2C (Inter-Integrated Circuit)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I2C (Inter-Integrated Circuit)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduccion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduccion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Que es I2C?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-conviene-usar-i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuándo conviene usar I²C?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pines-i2c-en-raspberry-pi-pico-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pines I2C en Raspberry Pi Pico 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocolo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocolo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-mensaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formato de mensaje
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secuencias comunes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-de-i2c-en-raspberry-pi-pico-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API de I2C en Raspberry Pi Pico SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API de I2C en Raspberry Pi Pico SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmakeliststxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMakeLists.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de-uso-escritura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo básico de uso Escritura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de-uso-lectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo básico de uso Lectura
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduccion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduccion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-es-i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Que es I2C?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cuando-conviene-usar-i2c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Cuándo conviene usar I²C?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pines-i2c-en-raspberry-pi-pico-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pines I2C en Raspberry Pi Pico 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocolo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protocolo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Protocolo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-de-mensaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formato de mensaje
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secuencias-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secuencias comunes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-de-i2c-en-raspberry-pi-pico-sdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API de I2C en Raspberry Pi Pico SDK
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API de I2C en Raspberry Pi Pico SDK">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cmakeliststxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMakeLists.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de-uso-escritura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo básico de uso Escritura
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-de-uso-lectura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo básico de uso Lectura
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="i2c-inter-integrated-circuit">I2C (Inter-Integrated Circuit)</h1>
+<h2 id="introduccion">Introduccion</h2>
+<h3 id="que-es-i2c">¿Que es I2C?</h3>
+<ul>
+<li>Bus serial síncrono de dos líneas:<ul>
+<li>SCL (clock) y SDA (datos).</li>
+</ul>
+</li>
+<li>Arquitectura multidispositivo sobre el mismo par de hilos.</li>
+<li>Comunicación máster ↔ esclavo (en la práctica: controller ↔ target).</li>
+<li>Cada target tiene una dirección (7 o 10 bits) en el bus.</li>
+</ul>
+<h3 id="cuando-conviene-usar-i2c">¿Cuándo conviene usar I²C?</h3>
+<ul>
+<li>Conectar muchos periféricos con pocos pines.</li>
+<li>Dispositivos típicos: sensores (temperatura, IMU), ADC/DAC, GPIO expanders, pantallas (OLED), EEPROM.</li>
+<li>Velocidades modestas: 100 kbps (Standard), 400 kbps (Fast), 1 Mbps (Fm+), 3.4 Mbps (Hs).
+(Para flujos más altos o enlaces punto a punto, SPI suele ser mejor; para texto/terminal, UART).</li>
+</ul>
+<h2 id="hardware">Hardware</h2>
+<!-- 
+
+![I2C Wiring](../../../images/i2c_wiring.png)
+
+![I2C Internal](../../../images/open_i2c.png)
+ -->
+<p>$$
+R_p(min)= \frac{V_{cc}-V_{oL}(max)}{I_{oL}}
+$$</p>
+<p>Donde $V_{oL}(max)$ es el voltaje máximo que el dispositivo garantiza en LOW (normalmente 0.4 V) e $I_{oL}$ es la corriente que el dispositivo puede absorber en LOW (normalmente 3 mA).
+$$
+R_p(min)= \frac{3.3V-0.4V}{3mA}=966.67 \Omega
+$$</p>
+<!-- 
+![I2C senales](../../../images/i2c_behaviours.png)
+ -->
+
+<p>$$
+R_p(max)= \frac{t_r}{0.8473 \cdot C_b}
+$$
+Donde $t_r$ es el tiempo máximo de subida permitido (1000 ns para 100 kHz, 300 ns para 400 kHz, 120 ns para 1 MHz) y $C_b$ es la capacitancia total del bus (incluyendo cables, PCB y dispositivos).</p>
+<p>Tipicamente usamos los siguientes valores:</p>
+<ul>
+<li>100 kHz: 4.7 kΩ y hasta 10 kΩ puede funcionar.</li>
+<li>400 kHz: 2.2–4.7 kΩ.</li>
+<li>1 MHz (Fm+): 1–2.2 kΩ.</li>
+</ul>
+<h3 id="pines-i2c-en-raspberry-pi-pico-2">Pines I2C en Raspberry Pi Pico 2</h3>
+<p><strong>I2C0</strong>
+- SDA pins: GP0, GP4, GP8, GP12, GP16, GP20
+- SCL pins: GP1, GP5, GP9, GP13, GP17, GP21</p>
+<p><strong>I2C1</strong>
+- SDA pins: GP2, GP6, GP10, GP14, GP18, GP26
+- SCL pins: GP3, GP7, GP11, GP15, GP19, GP27</p>
+<h2 id="protocolo">Protocolo</h2>
+<h3 id="formato-de-mensaje">Formato de mensaje</h3>
+<!-- 
+![I2C Frame](../../../images/frame.avif)
+ -->
+
+<ul>
+<li><code>START</code>: SDA cae (HIGH→LOW) mientras SCL está HIGH; inicio de transacción (maestro).</li>
+<li><code>Address + R/W</code>: Byte con dirección (7 bits) + bit R/W; selecciona esclavo y sentido (maestro).</li>
+<li><code>ACK/NACK</code>: Bit de acuse tras cada byte; lo da el receptor (esclavo en write, maestro en read).</li>
+<li><code>DATA</code>: Bytes MSB→LSB; en write los envía el maestro, en read los envía el esclavo.</li>
+<li><code>REPEATED START (Sr)</code>: Nuevo START sin STOP previo; encadena operaciones sin soltar el bus (maestro).</li>
+<li><code>STOP</code>: SDA sube (LOW→HIGH) mientras SCL está HIGH; fin de transacción y libera bus (maestro).</li>
+</ul>
+<h3 id="secuencias-comunes">Secuencias comunes</h3>
+<!-- 
+![I2C Frame](../../../images/frames2.png)
+-->
+
+<h2 id="api-de-i2c-en-raspberry-pi-pico-sdk">API de I2C en Raspberry Pi Pico SDK</h2>
+<ul>
+<li><code>i2c_init(i2c, baudrate)</code> inicializa el periférico I²C y fija la velocidad, donde:<ul>
+<li><code>i2c</code> es el puntero a la instancia (<code>i2c0</code> o <code>i2c1</code>).</li>
+<li><code>baudrate</code> es la velocidad objetivo en Hz (p. ej. <code>100000</code>, <code>400000</code>).</li>
+<li>Retorna: <code>uint</code> con la velocidad realmente aplicada.</li>
+</ul>
+</li>
+<li><code>i2c_deinit(i2c)</code> apaga/deshabilita el periférico I²C, donde:<ul>
+<li><code>i2c</code> es la instancia (<code>i2c0</code> o <code>i2c1</code>).</li>
+<li>Retorna: nada.</li>
+</ul>
+</li>
+<li><code>i2c_set_baudrate(i2c, baudrate)</code> cambia la velocidad en caliente, donde:<ul>
+<li><code>i2c</code> es la instancia.</li>
+<li><code>baudrate</code> es la nueva velocidad en Hz.</li>
+<li>Retorna: <code>uint</code> con la velocidad realmente aplicada.</li>
+</ul>
+</li>
+<li><code>i2c_write_blocking(i2c, addr, src, len, nostop)</code> envía bytes al esclavo (bloqueante), donde:<ul>
+<li><code>i2c</code> es la instancia.</li>
+<li><code>addr</code> es la dirección de 7 bits del esclavo (ej. <code>0x8A</code>).</li>
+<li><code>src</code> es puntero a la memoria con los datos a transmitir.</li>
+<li><code>len</code> es el número de bytes a enviar desde <code>src</code>.</li>
+<li><code>nostop</code> si es <code>true</code> no emite <strong>STOP</strong> (prepara <strong>REPEATED START</strong>); si es <code>false</code> sí emite <strong>STOP</strong>.</li>
+<li>Retorna: <code>int</code> con bytes escritos (debería ser <code>len</code>) o &lt;0 en error (NACK/timeout).</li>
+</ul>
+</li>
+<li><code>i2c_read_blocking(i2c, addr, dst, len, nostop)</code> lee bytes del esclavo (bloqueante), donde:<ul>
+<li><code>i2c</code> es la instancia.</li>
+<li><code>addr</code> es la dirección de 7 bits del esclavo.</li>
+<li><code>dst</code> es puntero a la memoria destino para almacenar los datos leídos.</li>
+<li><code>len</code> es el número de bytes a leer hacia <code>dst</code>.</li>
+<li><code>nostop</code> si es <code>true</code> no emite <strong>STOP</strong> al final; si es <code>false</code> emite <strong>STOP</strong> (el hardware NACKea el último byte).</li>
+<li>Retorna: <code>int</code> con bytes leídos (debería ser <code>len</code>) o &lt;0 en error.</li>
+</ul>
+</li>
+<li><code>i2c_write_timeout_us(i2c, addr, src, len, nostop, timeout_us)</code> igual que <code>i2c_write_blocking</code> pero con timeout, donde:<ul>
+<li><code>timeout_us</code> es el tiempo máximo en microsegundos.</li>
+<li>Retorna: bytes escritos, <code>PICO_ERROR_TIMEOUT</code> si expira, o &lt;0 en otros errores.</li>
+</ul>
+</li>
+<li><code>i2c_read_timeout_us(i2c, addr, dst, len, nostop, timeout_us)</code> igual que <code>i2c_read_blocking</code> pero con timeout, donde:<ul>
+<li><code>timeout_us</code> es el tiempo máximo en microsegundos.</li>
+<li>Retorna: bytes leídos, <code>PICO_ERROR_TIMEOUT</code> si expira, o &lt;0 en otros errores.</li>
+</ul>
+</li>
+</ul>
+<h3 id="cmakeliststxt">CMakeLists.txt</h3>
+<p>Para poder ocupar I2C es necesario agregar la libreria de hardware_i2c en el CMakeLists.txt de nuestro proyecto:
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">i2c_demo</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s">pico_stdlib</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="s">hardware_i2c</span><span class="w">          </span><span class="c"># &lt;-- AÑADIR esta línea</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">)</span>
+</span></code></pre></div></p>
+<h3 id="ejemplo-basico-de-uso-escritura">Ejemplo básico de uso Escritura</h3>
+<p>Siguiendo la siguiente transaccion:</p>
+<ol>
+<li><code>START</code> inicio de la comunicacion</li>
+<li><code>Address + W → ACK (esclavo)</code> indico con quien me voy a comunicar</li>
+<li><code>Data (registro) → ACK (esclavo)</code> indico donde quiero escribir el valor</li>
+<li><code>Data (valor) → ACK (esclavo)</code> indico que valor quiero escribir</li>
+<li><code>STOP</code> fin de la comunicacion</li>
+</ol>
+<div class="language-c highlight"><span class="filename">i2c_escribe</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico/stdlib.h&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hardware/i2c.h&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="cp">#define I2C_PORT    i2c0</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="cp">#define SDA_PIN     4</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="cp">#define SCL_PIN     5</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cp">#define ADDR 0x8A </span><span class="c1">//Direccion del dispositivo esclavo de 7 bits</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="n">stdio_init_all</span><span class="p">();</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="c1">//Configura el inicio de i2c con una velocidad de 100 KHz</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">i2c_init</span><span class="p">(</span><span class="n">I2C_PORT</span><span class="p">,</span><span class="w"> </span><span class="mi">100000</span><span class="p">);</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="c1">//Configura los pines para trabajar como i2c</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">SDA_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_I2C</span><span class="p">);</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">SCL_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_I2C</span><span class="p">);</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="c1">//Habilita pullup interno para pines</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="n">gpio_pull_up</span><span class="p">(</span><span class="n">SDA_PIN</span><span class="p">);</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="n">gpio_pull_up</span><span class="p">(</span><span class="n">SCL_PIN</span><span class="p">);</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00</span><span class="p">;</span><span class="w"> </span><span class="c1">//Registro a escribir     </span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x67</span><span class="p">;</span><span class="w"> </span><span class="c1">//Valor a escribir  </span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">value2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x42</span><span class="p">;</span><span class="w"> </span><span class="c1">//Valor a escribir   </span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">memoria</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">        </span><span class="n">memoria</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reg</span><span class="p">;</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span><span class="n">memoria</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">        </span><span class="n">memoria</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value2</span><span class="p">;</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">        </span><span class="cm">/*OPCION 1 TODO JUNTO*/</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">        </span><span class="c1">// START + addr|W + WRITE(reg) + ACK  </span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i2c_write_blocking</span><span class="p">(</span><span class="n">I2C_PORT</span><span class="p">,</span><span class="w"> </span><span class="n">ADDR</span><span class="p">,</span><span class="w"> </span><span class="n">memoria</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">memoria</span><span class="p">),</span><span class="w"> </span><span class="cm">/*nostop=*/</span><span class="nb">false</span><span class="p">);</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I2C error (ret=%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">);</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="k">sizeof</span><span class="p">(</span><span class="n">memoria</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Escritura parcial: %d/%d bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="k">sizeof</span><span class="p">(</span><span class="n">memoria</span><span class="p">));</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Escrito correctamente</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">        </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="ejemplo-basico-de-uso-lectura">Ejemplo básico de uso Lectura</h3>
+<ol>
+<li><code>START</code> inicio de la comunicacion</li>
+<li><code>Address + W → ACK (esclavo)</code> indico con quien me voy a comunicar en escritura</li>
+<li><code>Data (registro) → ACK (esclavo)</code> Escribo de donde quiero leer</li>
+<li><code>REPEATED START</code> Reinicio la comunicacion</li>
+<li><code>Address + R → ACK (esclavo)</code> indico con quien me voy a comunicar pero en lectura</li>
+<li><code>Data byte(s) → ACK (maestro)</code> Leo el/los byte(s) solicitados</li>
+<li><code>Último Data → NACK (maestro)</code> Indico que es el último byte que voy a leer</li>
+<li><code>STOP</code></li>
+</ol>
+<div class="language-c highlight"><span class="filename">i2c_leer</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;pico/stdlib.h&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hardware/i2c.h&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="cp">#define I2C_PORT    i2c0</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="cp">#define SDA_PIN     4</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="cp">#define SCL_PIN     5</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="cp">#define ADDR 0x2A </span><span class="c1">//Direccion del dispositivo esclavo de 7 bits</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="n">stdio_init_all</span><span class="p">();</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="c1">//Configura el inicio de i2c con una velocidad de 100 KHz</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="n">i2c_init</span><span class="p">(</span><span class="n">I2C_PORT</span><span class="p">,</span><span class="w"> </span><span class="mi">100000</span><span class="p">);</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="c1">//Configura los pines para trabajar como i2c</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">SDA_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_I2C</span><span class="p">);</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="n">gpio_set_function</span><span class="p">(</span><span class="n">SCL_PIN</span><span class="p">,</span><span class="w"> </span><span class="n">GPIO_FUNC_I2C</span><span class="p">);</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="c1">//Habilita pullup interno para pines</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">    </span><span class="n">gpio_pull_up</span><span class="p">(</span><span class="n">SDA_PIN</span><span class="p">);</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="n">gpio_pull_up</span><span class="p">(</span><span class="n">SCL_PIN</span><span class="p">);</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">reg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0x00</span><span class="p">;</span><span class="w"> </span><span class="c1">//Registro a Leer       </span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">memoria</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w"> </span><span class="c1">//Leeremos 3 bytes</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="c1">// START + addr|W + WRITE(reg) + ACK  + NoStop</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i2c_write_blocking</span><span class="p">(</span><span class="n">I2C_PORT</span><span class="p">,</span><span class="w"> </span><span class="n">ADDR</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">reg</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="cm">/*nostop=*/</span><span class="nb">true</span><span class="p">);</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I2C error (ret=%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">);</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="w">            </span><span class="k">goto</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">w</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Escritura parcial: %d/1 bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">);</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">            </span><span class="k">goto</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Escrito correctamente</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">        </span><span class="c1">// REPEATED START + addr|R + READ(data) + NACK + STOP</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i2c_read_blocking</span><span class="p">(</span><span class="n">I2C_PORT</span><span class="p">,</span><span class="w"> </span><span class="n">ADDR</span><span class="p">,</span><span class="w"> </span><span class="n">memoria</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">memoria</span><span class="p">),</span><span class="w"> </span><span class="cm">/*nostop=*/</span><span class="nb">false</span><span class="p">);</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I2C error (ret=%d)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="k">sizeof</span><span class="p">(</span><span class="n">memoria</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Lectura parcial: %d/%d bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="k">sizeof</span><span class="p">(</span><span class="n">memoria</span><span class="p">));</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Datos leidos: &quot;</span><span class="p">);</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">                </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;0x%02X &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">memoria</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Leido correctamente</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Datos leidos: </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="k">sizeof</span><span class="p">(</span><span class="n">memoria</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">                </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;0x%02X </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">memoria</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">        </span><span class="nl">next</span><span class="p">:</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="w">            </span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="p">}</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
