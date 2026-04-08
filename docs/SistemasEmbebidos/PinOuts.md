@@ -23,6 +23,12 @@ En esta sección de mi página colocaré los pinouts que encuentre de las placas
 
 ---
 
+## XIAO ESP32-C6
+
+![ESP32C6](IMGSTareas/IMG/Xiaoesp32c6.jpeg){ width="600" align=center}
+
+---
+
 ## XIAO ESP32-C3
 
 ![XIAOESP32C3](IMGSTareas/IMG/XiaoESP32C3.png){ width="600" align=center}
